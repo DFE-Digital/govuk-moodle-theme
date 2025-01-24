@@ -18,7 +18,7 @@
  * Theme functions.
  *
  * @package    theme_govuk
- * @copyright  Copyright (c) 2017 Crown Copyright (Department for Education)
+ * @copyright  Copyright (c) Crown Copyright (Department for Education)
  * @license    https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/ Open Government Licence v3.0
  */
 
