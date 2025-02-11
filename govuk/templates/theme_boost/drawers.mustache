@@ -49,7 +49,7 @@
         "addblockbutton": ""
     }
 }}
-{{> theme_boost/head }}
+{{> theme_govuk/head }}
 
 <body {{{ bodyattributes }}}>
 {{> core/local/toast/wrapper}}
@@ -57,7 +57,7 @@
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{> theme_boost/navbar }}
+    {{> theme_govuk/navbar }}
     {{#courseindex}}
         {{< theme_boost/drawer }}
             {{$id}}theme_boost-drawers-courseindex{{/id}}
@@ -132,7 +132,7 @@
             {{{ output.full_header }}}
             {{#secondarymoremenu}}
                 <div class="secondary-navigation d-print-none">
-                    {{> core/moremenu}}
+                    {{> theme_govuk/moremenu}}
                 </div>
             {{/secondarymoremenu}}
             <div id="page-content" class="pb-3 d-print-block">
@@ -167,7 +167,7 @@
             </div>
         </div>
     </div>
-    {{> theme_boost/footer }}
+    {{> theme_govuk/footer }}
     {{{ output.standard_after_main_region_html }}}
 </div>
 
