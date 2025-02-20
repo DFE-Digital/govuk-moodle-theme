@@ -2,7 +2,6 @@ name: Create release
 
 on:
     push:
-        branches: [ "SWIP-237-automate-releases" ]
         tags:
             - "v*"
 
