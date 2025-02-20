@@ -1,0 +1,27 @@
+name: Create release
+
+on:
+    push:
+        branches: [ "SWIP-237-automate-releases" ]
+        tags:
+            - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Release pushed tag
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4  
+        - name: Create release
+          env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                tag: ${{ github.ref_name }}
+          run: |
+            gh release create "$tag" \
+                --repo="$GITHUB_REPOSITORY" \
+                --title="${tag#v}" \
+                --generate-notes
