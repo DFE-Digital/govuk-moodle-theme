@@ -4,7 +4,7 @@ on:
     push:
         branches: [ "SWIP-237-automate-releases" ]
         tags:
-            - "v[0-9]+.[0-9]+.[0-9]+"
+            - "v*"
 
 permissions:
   contents: write
