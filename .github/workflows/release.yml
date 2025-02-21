@@ -13,14 +13,6 @@ jobs:
     name: Release pushed tag
     runs-on: ubuntu-latest
     steps:
-        - name: Check props
-          env:
-            GH_REF: ${{ github.ref }}
-            GH_EVENT: ${{ github.event.ref }}
-          shell: bash
-          run: |
-            echo "GH_REF: $GH_REF"
-            echo "GH_EVENT: $GH_EVENT"
         - name: Checkout
           uses: actions/checkout@v4
         - name: Create release
