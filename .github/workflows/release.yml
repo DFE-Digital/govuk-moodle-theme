@@ -4,7 +4,7 @@ on:
     workflow_dispatch:
       inputs:
         version:
-          description: 'Version name preferably in the format "[major].[minor].[patch]", where major, minor and patch are numeric. Will be used in tag name and in release name.'
+          description: 'Version name in the format "[major].[minor].[patch]", where major, minor and patch are numeric. Will be used in tag name and in release name.'
           required: true
           type: string
 
