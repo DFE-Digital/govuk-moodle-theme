@@ -27,7 +27,7 @@ jobs:
             github_token: ${{ secrets.GITHUB_TOKEN }}  
             custom_tag: ${{ inputs.version }} 
         - name: Create archive    
-          run: zip -r 'govuk-moodle-theme.zip' ./TodoApi    
+          run: zip -r 'govuk-moodle-theme.zip' ./govuk    
         - name: Create release
           uses: ncipollo/release-action@v1
           with:
