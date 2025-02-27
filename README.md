@@ -24,14 +24,9 @@ To use this theme you need to copy the the `gov-uk` directory from a release arc
 Please use the assets available as part of the existing versioned releases or create a new release.
 
 ### Automated setup
-To use this theme as part of your Moodle deployment scripts, the steps described in the manual approach must be automated. 
+To use this theme as part of your Moodle deployment scripts, the download of the release archive must be automated as well as the steps described in the manual approach. 
 
 It is the responsibility of those using this theme to check regularly for updates and to implement new versions as required. 
-
-An example is provided if installing and running Moodle via [DDEV](https://ddev.readthedocs.io/en/stable/).
-
-#### DDEV install theme
-To be defined.
 
 
 
