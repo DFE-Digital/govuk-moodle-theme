@@ -22,15 +22,15 @@ jobs:
       - name: Compile SCSS to CSS
         uses: gha-utilities/sass-build@v0.6.0
         with:
-          source: "scss/govuk.scss"
-          destination: "style/govuk.css"
+          source: "govuk/scss/govuk.scss"
+          destination: "govuk/style/govuk.css"
           minify: true  
 
       - name: Commit and push compiled CSS
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions@github.com"
-          git add style/govuk.css
+          git add govuk/style/govuk.css
           git diff --quiet && git diff --staged --quiet || git commit -m "Auto-compiled SCSS"
           git push
         env:
