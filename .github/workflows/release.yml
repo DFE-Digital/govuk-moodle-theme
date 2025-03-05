@@ -12,6 +12,29 @@ permissions:
   contents: write
 
 jobs:
+  compile_css:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Compile SCSS to CSS
+        uses: ksassnowski/sass-action@v1
+        with:
+          source: "scss/govuk.scss" 
+          destination: "style/govuk.css"
+
+      - name: Commit and push compiled CSS
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@github.com"
+          git add style/govuk.css
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-compiled SCSS"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   release:
     name: Tag and release
     runs-on: ubuntu-latest
