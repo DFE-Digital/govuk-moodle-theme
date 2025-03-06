@@ -24,19 +24,3 @@
 
 // This line protects the file from being accessed by a URL directly.                                                               
 defined('MOODLE_INTERNAL') || die();
-
-function theme_govuk_get_main_scss_content($theme) {
-    global $CFG;
-    $scss = '';
-
-    // Include the parent theme's SCSS
-    $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/preset/default.scss');
-
-    // Include your govuk SCSS
-    $custom_scss_path = $CFG->dirroot . '/theme/govuk/scss/govuk.scss';
-    if (file_exists($custom_scss_path)) {
-        $scss .= file_get_contents($custom_scss_path);
-    }
-
-    return $scss;
-}
