@@ -26,6 +26,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: govuk
 
       - name: Compile SCSS to CSS
         run: npx sass govuk/scss/govuk.scss govuk/style/govuk.css --style=compressed
