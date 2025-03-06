@@ -4,6 +4,7 @@
     @extend .govuk-button; // extends this class with the styles from govuk-button
 }
 
-.btn-secondary {
+.btn.btn-secondary {
+    @extend .govuk-button;
     @extend .govuk-button--secondary;
 }
