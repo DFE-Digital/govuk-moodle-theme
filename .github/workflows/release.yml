@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  compile-scss:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,19 +22,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # Use latest LTS version
+          node-version: 22
 
       - name: Install dependencies
         run: npm install sass
 
       - name: Compile SCSS to CSS
-        run: npx sass scss/govuk.scss style/govuk.css --style=compressed
+        run: npx sass govuk/scss/govuk.scss govuk/style/govuk.css --style=compressed
 
       - name: Commit compiled CSS (if changed)
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions@github.com"
-          git add style/govuk.css
+          git add govuk/style/govuk.css
           git diff --quiet && git diff --staged --quiet || git commit -m "Auto-compiled SCSS to CSS"
           git push
         env:
