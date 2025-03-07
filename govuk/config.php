@@ -27,7 +27,5 @@ defined('MOODLE_INTERNAL') || die();
                                                                                                                                                                                                                            
 $THEME->name = 'govuk';                                                                                                                                                                                                                                                     
 $THEME->parents = ['boost'];                                                                                                        
-$THEME->scss = function($theme) {
-    return theme_govuk_get_main_scss_content($theme);
-};                                                                                                         
+$THEME->sheets = ['govuk'];
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';                                                                      

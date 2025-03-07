@@ -28,5 +28,5 @@ To use this theme as part of your Moodle deployment scripts, the download of the
 
 It is the responsibility of those using this theme to check regularly for updates and to implement new versions as required. 
 
-
-
+## Local Development
+To use your changes in your local instance of Moodle you will need to compile the SCSS into CSS after you have made your changes. To do this you can run the following command in the root of the repository `sass govuk/scss/govuk.scss govuk/style/govuk.css`. This will compile the SCSS from the `scss` folder in the `govuk.scss` file and place it in the `style` folder with the file name being `govuk.css`. The CSS must be in the style folder for Moodle to be able to find and reference it.
