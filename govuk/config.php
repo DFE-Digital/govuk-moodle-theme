@@ -28,4 +28,5 @@ defined('MOODLE_INTERNAL') || die();
 $THEME->name = 'govuk';                                                                                                                                                                                                                                                     
 $THEME->parents = ['boost'];                                                                                                        
 $THEME->sheets = ['govuk'];
+$THEME->javascripts = ['govuk-frontend.min'];
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';                                                                      
