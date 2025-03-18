@@ -8,3 +8,22 @@
     @extend .govuk-button;
     @extend .govuk-button--secondary;
 }
+
+// Moodle applies the "h2" class to h1 tags in multiple places - we need to add the `#page-header` so we can override the original style by being more/equally specific 
+#page-header {
+    h1.h2 {
+        @extend .govuk-heading-m;
+    }
+}
+
+h1 {
+    @extend .govuk-heading-l;
+}
+
+h2 {
+    @extend .govuk-heading-m;
+}
+
+h3 {
+    @extend .govuk-heading-s;
+}
