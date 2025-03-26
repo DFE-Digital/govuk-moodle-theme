@@ -1,29 +1,30 @@
 @import "../node_modules/govuk-frontend/dist/govuk/index.scss";
 
-.btn-primary { // This is the Moodle class
-    @extend .govuk-button; // extends this class with the styles from govuk-button
+.btn-primary {
+  // This is the Moodle class
+  @extend .govuk-button; // extends this class with the styles from govuk-button
 }
 
 .btn.btn-secondary {
-    @extend .govuk-button;
-    @extend .govuk-button--secondary;
+  @extend .govuk-button;
+  @extend .govuk-button--secondary;
 }
 
-// Moodle applies the "h2" class to h1 tags in multiple places - we need to add the `#page-header` so we can override the original style by being more/equally specific 
+// Moodle applies the "h2" class to h1 tags in multiple places - we need to add the `#page-header` so we can override the original style by being more/equally specific
 #page-header {
-    h1.h2 {
-        @extend .govuk-heading-m;
-    }
+  h1.h2 {
+    @extend .govuk-heading-m;
+  }
 }
 
 h1 {
-    @extend .govuk-heading-l;
+  @extend .govuk-heading-l;
 }
 
 h2 {
-    @extend .govuk-heading-m;
+  @extend .govuk-heading-m;
 }
 
 h3 {
-    @extend .govuk-heading-s;
+  @extend .govuk-heading-s;
 }
