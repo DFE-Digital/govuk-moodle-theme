@@ -22,10 +22,10 @@
  * @license    https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/ Open Government Licence v3.0
  */
 
-// This line protects the file from being accessed by a URL directly.                                                               
+// This line protects the file from being accessed by a URL directly.
 defined('MOODLE_INTERNAL') || die();
-                                                                                                                                                                                                                           
-$THEME->name = 'govuk';                                                                                                                                                                                                                                                     
-$THEME->parents = ['boost'];                                                                                                        
+
+$THEME->name = 'govuk';
+$THEME->parents = ['boost'];
 $THEME->sheets = ['govuk'];
-$THEME->rendererfactory = 'theme_overridden_renderer_factory';                                                                      
+$THEME->rendererfactory = 'theme_overridden_renderer_factory';

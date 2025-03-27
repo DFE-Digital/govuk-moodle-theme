@@ -1,7 +1,7 @@
 <?php
 
-class theme_govuk_core_renderer extends core_renderer {
-
+class theme_govuk_core_renderer extends core_renderer
+{
     /**
      * See if this is the first view of the current cm in the session if it has fake blocks.
      *
@@ -10,7 +10,8 @@ class theme_govuk_core_renderer extends core_renderer {
      *
      * @return boolean true if the page has fakeblocks and this is the first visit.
      */
-    public function firstview_fakeblocks(): bool {
+    public function firstview_fakeblocks(): bool
+    {
         global $SESSION;
 
         $firstview = false;
@@ -21,7 +22,12 @@ class theme_govuk_core_renderer extends core_renderer {
             if (!property_exists($SESSION, 'firstview_fakeblocks')) {
                 $SESSION->firstview_fakeblocks = [];
             }
-            if (array_key_exists($this->page->cm->id, $SESSION->firstview_fakeblocks)) {
+            if (
+                array_key_exists(
+                    $this->page->cm->id,
+                    $SESSION->firstview_fakeblocks,
+                )
+            ) {
                 $firstview = false;
             } else {
                 $SESSION->firstview_fakeblocks[$this->page->cm->id] = true;
