@@ -9,6 +9,6 @@
   },
   "scripts": {
     "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --write ."
+    "prettier:write": "prettier --write ."
   }
 }

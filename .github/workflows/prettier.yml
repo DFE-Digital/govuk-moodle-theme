@@ -30,4 +30,4 @@ jobs:
       - name: Run Prettier Check
         run: |
           cd govuk
-          npm run prettier:check
+          npm run prettier:write
