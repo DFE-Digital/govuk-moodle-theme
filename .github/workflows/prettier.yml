@@ -30,12 +30,12 @@ jobs:
       - name: Run Prettier Check
         run: |
           cd govuk
-          npm run prettier:write
+          npx prettier --write "**/*.{php,js,css,scss,less,md}"
       
-      - name: Commit Fixes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Apply Prettier formatting fixes"
-          branch: ${{ github.head_ref }}  # Ensures changes apply to the PR branch
-          file_pattern: '**/*.{php,js,css,scss,less,md}'
-          push_options: '--force'
+      - name: Commit and Push Fixes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --staged --quiet || git commit -m "Apply Prettier formatting fixes"
+          git push origin ${{ github.head_ref }}
