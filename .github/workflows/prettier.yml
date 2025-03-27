@@ -14,7 +14,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set Up Node.js
         uses: actions/setup-node@v3
@@ -31,3 +31,10 @@ jobs:
         run: |
           cd govuk
           npm run prettier:write
+      
+      - name: Commit Fixes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Apply Prettier formatting fixes"
+          branch: ${{ github.head_ref }}  # Ensures changes apply to the PR branch
+          file_pattern: '**/*.{php,js,css,scss,less,md}'
