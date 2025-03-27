@@ -2,5 +2,13 @@
   "dependencies": {
     "govuk-frontend": "^5.8.0",
     "sass": "^1.85.0"
+  },
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.22.4",
+    "prettier": "^3.5.3"
+  },
+  "scripts": {
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write ."
   }
 }

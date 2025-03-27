@@ -22,12 +22,12 @@
  * @license    https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/ Open Government Licence v3.0
  */
 
-// This line protects the file from being accessed by a URL directly.                                                               
-defined('MOODLE_INTERNAL') || die();                                                                                                
-                                                                                                                                    
-// A description shown in the admin theme selector.                                                                                 
-$string['choosereadme'] = 'Theme GOV.UK is a child theme of Boost';                
-// The name of our plugin.                                                                                                          
-$string['pluginname'] = 'GOV.UK';                                                                                                    
-// We need to include a lang string for each block region.                                                                          
+// This line protects the file from being accessed by a URL directly.
+defined('MOODLE_INTERNAL') || die();
+
+// A description shown in the admin theme selector.
+$string['choosereadme'] = 'Theme GOV.UK is a child theme of Boost';
+// The name of our plugin.
+$string['pluginname'] = 'GOV.UK';
+// We need to include a lang string for each block region.
 $string['region-side-pre'] = 'Right';

@@ -22,5 +22,5 @@
  * @license    https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/ Open Government Licence v3.0
  */
 
-// This line protects the file from being accessed by a URL directly.                                                               
+// This line protects the file from being accessed by a URL directly.
 defined('MOODLE_INTERNAL') || die();
