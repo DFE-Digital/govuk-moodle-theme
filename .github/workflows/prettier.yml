@@ -28,12 +28,14 @@ jobs:
         run: |
           cd govuk
           npx prettier --write "**/*.{php,js,css,scss,less,md}"
-      
+
       - name: Commit and Push Fixes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin ${{ github.head_ref }}
+
           git add .
           git diff --staged --quiet || git commit -m "Apply Prettier formatting fixes"
+
+          git pull --rebase origin ${{ github.head_ref }} || echo "No remote changes to rebase"
           git push origin HEAD:${{ github.head_ref }}
