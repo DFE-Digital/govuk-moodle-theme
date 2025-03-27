@@ -38,3 +38,4 @@ jobs:
           commit_message: "Apply Prettier formatting fixes"
           branch: ${{ github.head_ref }}  # Ensures changes apply to the PR branch
           file_pattern: '**/*.{php,js,css,scss,less,md}'
+          push_options: '--force'
