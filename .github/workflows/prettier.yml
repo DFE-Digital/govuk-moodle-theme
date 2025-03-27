@@ -16,7 +16,13 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Run Prettier Check
-        uses: creyD/prettier_action@v4.3
+      - name: Set Up Node.js
+        uses: actions/setup-node@v3
         with:
-          prettier_options: --write **/*.{js,md,css,scss,less}
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Prettier Check
+        run: npm run prettier:check
