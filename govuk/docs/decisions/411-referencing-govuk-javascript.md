@@ -6,11 +6,12 @@ deciders {list everyone involved in the decision}
 consulted {list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication}
 informed {list everyone who is kept up-to-date on progress; and with whom there is a one-way communication}
 ---
+
 # Referencing the GOV.UK Design System JavaScript file in the GOV.UK Moodle Theme
 
 ## Context and Problem Statement
 
-When we call the Gov Notify client we need to add functionality to our code that allows it to retry the request *X* times if it fails initially. In order to do this we need alter how we call the client.
+When we call the Gov Notify client we need to add functionality to our code that allows it to retry the request _X_ times if it fails initially. In order to do this we need alter how we call the client.
 
 When implementing the [GOV.UK Design System](https://design-system.service.gov.uk/) for the [GOV.UK Moodle Theme](https://github.com/DFE-Digital/govuk-moodle-theme) we needed to reference various files from the [GOV.UK Frontend NPM Package](https://www.npmjs.com/package/govuk-frontend). This included files such as the CSS, JavaScript, images, etc. The CSS and JavaScript files were needed for the GOV.UK components to have full functionality. The primary way these files are referenced in Moodle is by adding them to the correct directories in this project (`scss`/`style`/`javascript`) and adding the relevant config into the `config.php` file.
 
@@ -20,9 +21,9 @@ The [GOV.UK Design System](https://design-system.service.gov.uk/) JavaScript fil
 
 ## Considered Options
 
- - Find an alternative way to link the Javascript file through Moodle
- - Change the JavaScript file so that it doesn't use the Modules that Moodle doesn't support
- - Link the JavaScript file directly in one of the Templates, bypassing Moodle
+- Find an alternative way to link the Javascript file through Moodle
+- Change the JavaScript file so that it doesn't use the Modules that Moodle doesn't support
+- Link the JavaScript file directly in one of the Templates, bypassing Moodle
 
 ## Decision Outcome
 
