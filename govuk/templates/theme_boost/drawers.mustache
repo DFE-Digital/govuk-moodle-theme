@@ -52,6 +52,15 @@
 {{> theme_govuk/head }}
 
 <body {{{ bodyattributes }}}>
+
+<script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+<!-- component HTML -->
+<script type="module" src="/theme/govuk/javascript/govuk-frontend.min.js"></script>
+<script type="module">
+    import { initAll } from '/theme/govuk/javascript/govuk-frontend.min.js'
+    initAll()
+</script>
+
 {{> core/local/toast/wrapper}}
 <div id="page-wrapper" class="d-print-block">
 
