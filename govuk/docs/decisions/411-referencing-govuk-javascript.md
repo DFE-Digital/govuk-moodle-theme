@@ -6,7 +6,7 @@ deciders {list everyone involved in the decision}
 consulted {list everyone whose opinions are sought (typically subject-matter experts); and with whom there is a two-way communication}
 informed {list everyone who is kept up-to-date on progress; and with whom there is a one-way communication}
 ---
-# Implementation of exponential backoff and pattern for calling Gov Notify
+# Referencing the GOV.UK Design System JavaScript file in the GOV.UK Moodle Theme
 
 ## Context and Problem Statement
 
