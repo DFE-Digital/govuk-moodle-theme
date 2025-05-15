@@ -1,5 +1,9 @@
 @import '../node_modules/govuk-frontend/dist/govuk/index.scss';
 
+html body {
+  height: auto;
+}
+
 .btn-primary {
   // This is the Moodle class
   @extend .govuk-button; // extends this class with the styles from govuk-button
