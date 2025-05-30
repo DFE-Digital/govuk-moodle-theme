@@ -1,12 +1,13 @@
-name: Create tag and release
+name: Build theme and optionally release
 
 on:
-    workflow_dispatch:
-      inputs:
-        version:
-          description: 'Version name in the format "[major].[minor].[patch]", where major, minor and patch are numeric. Will be used in tag name and in release name.'
-          required: true
-          type: string
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version name in the format "[major].[minor].[patch]", where major, minor and patch are numeric. Will be used in tag name and in release name.'
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -31,37 +32,44 @@ jobs:
       - name: Compile SCSS to CSS
         run: npx sass govuk/scss/govuk.scss govuk/style/govuk.css --style=compressed
 
-      - name: Commit compiled CSS (if changed)
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions@github.com"
-          git add govuk/style/govuk.css
-          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-compiled SCSS to CSS"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload compiled govuk/style folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-govuk-style
+          path: govuk/style
 
   release:
     name: Tag and release
+    if: ${{ github.event.inputs.version != '' }}
+    needs: compile-scss
     runs-on: ubuntu-latest
     steps:
         - name: Checkout
           uses: actions/checkout@v4
           with: 
             ref: 'main'
+
+        - name: Download compiled govuk folder
+          uses: actions/download-artifact@v4
+          with:
+            name: compiled-govuk-style
+            path: govuk/style
+
+        - name: Create archive    
+          run: zip -r 'govuk-moodle-theme.zip' ./govuk
+
         - name: Create and push tag
           id: tag_version
           uses: mathieudutour/github-tag-action@v6.2
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}  
-            custom_tag: ${{ inputs.version }} 
-        - name: Create archive    
-          run: zip -r 'govuk-moodle-theme.zip' ./govuk    
+            custom_tag: ${{ inputs.version }}
+
         - name: Create release
           uses: ncipollo/release-action@v1
           with:
             tag: ${{ steps.tag_version.outputs.new_tag }}
             name: Release ${{ steps.tag_version.outputs.new_tag }}
             body: ${{ steps.tag_version.outputs.changelog }}
-            artifacts: "govuk-moodle-theme.zip"
+            artifacts: 'govuk-moodle-theme.zip'
             generateReleaseNotes: true

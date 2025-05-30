@@ -17,16 +17,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          working-directory: govuk
 
       - name: Install Dependencies
+        working-directory: govuk
         run: |
-          cd govuk
           npm install
 
       - name: Run Prettier Check
+        working-directory: govuk
         run: |
-          cd govuk
           npx prettier --write "**/*.{php,js,css,scss,less,md}"
 
       - name: Commit and Push Fixes
