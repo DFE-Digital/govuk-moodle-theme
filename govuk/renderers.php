@@ -2,11 +2,16 @@
 
 class theme_govuk_core_renderer extends core_renderer
 {
-    public function body_attributes($additionalclasses = []) {
+    public function body_attributes($additionalclasses = [])
+    {
         $attributes = parent::body_attributes($additionalclasses);
 
         // Add your custom class
-        $attributes = preg_replace('/class="([^"]*)"/', 'class="$1 govuk-template__body"', $attributes);
+        $attributes = preg_replace(
+            '/class="([^"]*)"/',
+            'class="$1 govuk-template__body"',
+            $attributes,
+        );
 
         return $attributes;
     }
