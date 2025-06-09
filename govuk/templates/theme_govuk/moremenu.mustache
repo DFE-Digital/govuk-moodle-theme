@@ -51,22 +51,15 @@
         Menu
     </button>
 
-    <ul id="moremenu-{{moremenuid}}-{{navbarstyle}}" role="{{#istablist}}tablist{{/istablist}}{{^istablist}}menubar{{/istablist}}" class="govuk-service-navigation__list">
+    <ul id="navigation" class="govuk-service-navigation__list">
         {{#nodecollection}}
             {{#children}}
                 {{> core/moremenu_children}}
             {{/children}}
         {{/nodecollection}}
         {{#nodearray}}
-            {{> core/moremenu_children}}
+            {{> theme_govuk/moremenu_children}}
         {{/nodearray}}
-        <li role="none" class="nav-item dropdown dropdownmoremenu d-none" data-region="morebutton">
-            <a class="dropdown-toggle nav-link {{#isactive}}active{{/isactive}}" href="#" id="moremenu-dropdown-{{moremenuid}}" role="{{#istablist}}tab{{/istablist}}{{^istablist}}menuitem{{/istablist}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1">
-                {{#str}}moremenu, core{{/str}}
-            </a>
-            <ul class="dropdown-menu dropdown-menu-left" data-region="moredropdown" aria-labelledby="moremenu-dropdown-{{moremenuid}}" role="menu">
-            </ul>
-        </li>
     </ul>
 </nav>
 {{#js}}
