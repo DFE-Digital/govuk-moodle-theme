@@ -52,6 +52,11 @@
     </button>
 
     <ul id="navigation" class="govuk-service-navigation__list">
+        {{#nodecollection}}
+            {{#children}}
+                {{> core/moremenu_children}}
+            {{/children}}
+        {{/nodecollection}}
         {{#nodearray}}
             {{> theme_govuk/moremenu_children}}
         {{/nodearray}}
