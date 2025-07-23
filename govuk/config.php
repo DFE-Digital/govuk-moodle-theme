@@ -31,9 +31,9 @@ $THEME->sheets = ['govuk'];
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 $THEME->layouts = [
-    'standard' => array(
+    'standard' => [
         'file' => 'drawers.php',
-        'regions' => array('side-pre'),
+        'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
-    ),
+    ],
 ];
