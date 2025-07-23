@@ -30,7 +30,8 @@ jobs:
         working-directory: govuk
 
       - name: Compile SCSS to CSS
-        run: npx sass govuk/scss/govuk.scss govuk/style/govuk.css --style=compressed
+        run: npm run build:prod
+        working-directory: govuk
 
       - name: Upload compiled govuk/style folder
         uses: actions/upload-artifact@v4

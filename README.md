@@ -37,4 +37,87 @@ It is the responsibility of those using this theme to check regularly for update
 
 ## Local Development
 
-If this is the first time you are generating the css file locally, navigate to the `govuk` folder in the theme repo and run `npm install`. After you have made your changes in your local instance of Moodle you will need to compile the SCSS into CSS. To do this you can run the following command, again from the `govuk` folder: `npx sass scss/govuk.scss style/govuk.css`.  This will compile the SCSS from the `scss` folder in the `govuk.scss` file and place it in the `style` folder with the file name being `govuk.css`. The CSS must be in the style folder for Moodle to be able to find and reference it.
+If this is the first time you are generating the CSS file locally, navigate to the `govuk` folder in the theme repo and run:
+
+```bash
+npm install
+```
+
+### 🛠 Making Changes
+
+After you've made changes to your local instance of Moodle, you'll likely want to:
+
+1. **Compile the SCSS into CSS**
+2. **Copy updated theme files into your local Moodle instance**
+
+#### 1. Compile SCSS
+
+To compile the SCSS into CSS, run:
+
+```bash
+npm run build
+```
+
+This compiles the `govuk.scss` file from the `scss` folder and outputs it to `style/govuk.css`. The CSS must be placed in the `style` folder for Moodle to correctly reference it. It also copies the images from the `govuk-frontend` into the `pix` directory for use within Moodle.
+
+To compile a compressed production build:
+
+```bash
+npm run build:prod
+```
+
+#### 2. Copy Theme Files to Moodle
+
+To copy the updated theme files (`style/`, `templates/`, and `pix/`) into your local Moodle environment, use the `copy:theme` script:
+
+```bash
+npm run copy:theme -- /full/path/to/moodle/theme/govuk
+```
+
+You can also add:
+
+* `--watch` to automatically copy changes as you edit files
+* `--verbose` to log every copied file
+
+Example:
+
+```bash
+npm run copy:theme -- /home/igi/git/DFE-Digital/social-work-induction-programme-digital-service/apps/moodle-ddev/public/theme/govuk --watch --verbose
+```
+
+---
+
+### 🔧 Full Dev Workflow
+
+You can run a full development workflow with live watching by setting the `MOODLE_THEME_PATH` environment variable and using:
+
+```bash
+npm run dev
+```
+
+This will:
+
+* Watch all SCSS files and automatically rebuild the CSS
+* Copy updated theme files to Moodle as they change
+
+To avoid typing your Moodle path every time, create a `.env` file in the root of the project:
+
+```env
+MOODLE_THEME_PATH=/home/username/moodle-ddev/public/theme/govuk
+```
+
+> Note: `~` is **not supported** in `.env` paths. Use the full path to your home directory (e.g., `/home/username/...`)
+
+Then just run:
+
+```bash
+npm run dev
+```
+
+a `.env.example` file you can update has been included in the repo. Copy it to `.env` by running:
+
+```bash
+cp .env.example .env
+```
+
+
