@@ -82,7 +82,7 @@ You can also add:
 Example:
 
 ```bash
-npm run copy:theme -- /home/igi/git/DFE-Digital/social-work-induction-programme-digital-service/apps/moodle-ddev/public/theme/govuk --watch --verbose
+npm run copy:theme -- /home/username/moodle-ddev/public/theme/govuk --watch --verbose
 ```
 
 ---
