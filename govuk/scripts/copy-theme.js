@@ -19,6 +19,8 @@ const sources = [
   { from: 'style/**/*', to: path.join(dest, 'style') },
   { from: 'templates/**/*', to: path.join(dest, 'templates') },
   { from: 'pix/**/*', to: path.join(dest, 'pix') },
+  { from: 'layout/**/*', to: path.join(dest, 'layout') },
+  { from: 'javascript/**/*', to: path.join(dest, 'javascript') },
 ];
 
 const runCpx = ({ from, to }) => {
