@@ -1,3 +1,4 @@
+.env
 node_modules
 govuk/style/govuk.css
 govuk/style/govuk.css.map

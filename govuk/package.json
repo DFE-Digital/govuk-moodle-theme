@@ -1,14 +1,27 @@
 {
   "dependencies": {
-    "govuk-frontend": "^5.8.0",
+    "govuk-frontend": "^5.11.1",
     "sass": "^1.85.0"
   },
   "devDependencies": {
     "@prettier/plugin-php": "^0.22.4",
+    "chokidar-cli": "^3.0.0",
+    "cpx": "^1.5.0",
+    "dotenv-cli": "^9.0.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.5.3"
   },
   "scripts": {
     "prettier:check": "prettier --check .",
-    "prettier:write": "prettier --write ."
+    "prettier:write": "prettier --write .",
+    "build": "npm run copy:govuk && sass scss/govuk.scss style/govuk.css",
+    "build:prod": "npm run copy:govuk && sass scss/govuk.scss style/govuk.css --style=compressed",
+    "copy:govuk": "npm-run-all --parallel copy:govuk-images copy:govuk-js",
+    "copy:govuk-images": "cpx \"node_modules/govuk-frontend/dist/govuk/assets/images/*\" pix/images && cpx \"node_modules/govuk-frontend/dist/govuk/assets/rebrand/**/*\" pix/rebrand",
+    "copy:govuk-js": "cpx \"node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.{js,js.map}\" javascript",
+    "copy:theme": "node scripts/copy-theme.js",
+    "watch:scss": "chokidar \"scss/**/*.scss\" -c \"npm run build\"",
+    "watch:theme": "node scripts/copy-theme.js --watch --verbose $THEME_PATH",
+    "dev": "dotenv -e .env npm-run-all --parallel watch:scss watch:theme"
   }
 }

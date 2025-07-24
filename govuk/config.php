@@ -29,3 +29,11 @@ $THEME->name = 'govuk';
 $THEME->parents = ['boost'];
 $THEME->sheets = ['govuk'];
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
+
+$THEME->layouts = [
+    'standard' => [
+        'file' => 'drawers.php',
+        'regions' => ['side-pre'],
+        'defaultregion' => 'side-pre',
+    ],
+];
