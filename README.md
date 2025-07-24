@@ -68,11 +68,13 @@ npm run build:prod
 
 #### 2. Copy Theme Files to Moodle
 
-To copy the updated theme files (`style/`, `templates/`, and `pix/`) into your local Moodle environment, use the `copy:theme` script:
+To copy the updated theme files into your local Moodle environment, use the `copy:theme` script:
 
 ```bash
 npm run copy:theme -- /full/path/to/moodle/theme/govuk
 ```
+
+The script is coded to only copy specific directories, so if something is not being copied over, check the script to see if it's supported.
 
 You can also add:
 
