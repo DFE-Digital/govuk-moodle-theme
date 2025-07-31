@@ -6,6 +6,7 @@
   "devDependencies": {
     "@prettier/plugin-php": "^0.22.4",
     "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.2.0",
     "cpx": "^1.5.0",
     "dotenv-cli": "^9.0.0",
     "npm-run-all": "^4.1.5",
@@ -22,6 +23,6 @@
     "copy:theme": "node scripts/copy-theme.js",
     "watch:scss": "chokidar \"scss/**/*.scss\" -c \"npm run build\"",
     "watch:theme": "node scripts/copy-theme.js --watch --verbose $THEME_PATH",
-    "dev": "dotenv -e .env npm-run-all --parallel watch:scss watch:theme"
+    "dev": "dotenv -e .env concurrently 'npm run watch:theme' 'npm run watch:scss'"
   }
 }
