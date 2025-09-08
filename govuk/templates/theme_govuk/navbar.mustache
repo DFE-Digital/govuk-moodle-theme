@@ -119,8 +119,7 @@
             </a>
           </li>
           <li class="rebranded-one-login-header__nav__list-item">
-            <!-- REPLACE SIGN OUT URL PLACEHOLDER WITH SIGN OUT PAGE FOR YOUR SERVICE -->
-            <a class="rebranded-one-login-header__nav__link" href="https://home.account.gov.uk/sign-out">
+            <a class="rebranded-one-login-header__nav__link" href="{{ output.logout_endpoint }}">
               <span class="rebranded-one-login-header__nav__link-content rebranded-one-login-header__nav__link-content--sign-out">Sign out</span>
             </a>
           </li>
@@ -138,10 +137,12 @@
   <section aria-label="Service information" class="govuk-service-navigation" data-module="govuk-service-navigation">
     <div class="govuk-width-container">
       <div class="govuk-service-navigation__container">
+        <span class="govuk-service-navigation__service-name">
+            <span class="govuk-service-navigation__text">Social Work Practise Development Programme</span>
+        </span>
+
         {{#primarymoremenu}}
-        <div class="primary-navigation">
             {{> theme_govuk/moremenu}}
-        </div>
         {{/primarymoremenu}}
       </div>
     </div>
