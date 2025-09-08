@@ -1,15 +1,18 @@
 <?php
 
 class theme_govuk_core_renderer extends core_renderer
-{ 
-    public function logout_endpoint($withlinks = true) {
+{
+    public function logout_endpoint($withlinks = true)
+    {
         global $USER;
 
         if (!isloggedin() || isguestuser()) {
             return '';
         }
 
-        $logouturl = new \moodle_url('/login/logout.php', ['sesskey' => sesskey()]);
+        $logouturl = new \moodle_url('/login/logout.php', [
+            'sesskey' => sesskey(),
+        ]);
         return $logouturl->out(false);
     }
 

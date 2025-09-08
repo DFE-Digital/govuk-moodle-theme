@@ -1,91 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
 .govuk-width-container {
   max-width: 960px;
   margin-right: 15px;
@@ -122,57 +34,12 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
 .govuk-grid-row {
   margin-right: -15px;
   margin-left: -15px;
 }
 .govuk-grid-row::after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
@@ -315,7 +182,6 @@
   }
 }
 
-
 .govuk-service-navigation {
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -372,8 +238,15 @@
   }
 }
 
-.govuk-service-navigation__service-name + .govuk-service-navigation__wrapper .govuk-service-navigation__list:first-child .govuk-service-navigation__item:first-child,
-.govuk-service-navigation__service-name + .govuk-service-navigation__wrapper .govuk-service-navigation__toggle[hidden] + .govuk-service-navigation__list .govuk-service-navigation__item:first-child {
+.govuk-service-navigation__service-name
+  + .govuk-service-navigation__wrapper
+  .govuk-service-navigation__list:first-child
+  .govuk-service-navigation__item:first-child,
+.govuk-service-navigation__service-name
+  + .govuk-service-navigation__wrapper
+  .govuk-service-navigation__toggle[hidden]
+  + .govuk-service-navigation__list
+  .govuk-service-navigation__item:first-child {
   margin-top: 0;
 }
 
@@ -395,26 +268,30 @@
 }
 
 .govuk-service-navigation__link {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
+  text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1578em;
 }
 /*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */ /* stylelint-disable-line scss/comment-no-loud  */
 @font-face {
-  font-family: "GDS Transport";
+  font-family: 'GDS Transport';
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/light-94a07e06a1-v2.woff2") format("woff2"), url("/assets/fonts/light-f591b13f7d-v2.woff") format("woff");
+  src:
+    url('/assets/fonts/light-94a07e06a1-v2.woff2') format('woff2'),
+    url('/assets/fonts/light-f591b13f7d-v2.woff') format('woff');
   font-display: fallback;
 }
 @font-face {
-  font-family: "GDS Transport";
+  font-family: 'GDS Transport';
   font-style: normal;
   font-weight: bold;
-  src: url("/assets/fonts/bold-b542beb274-v2.woff2") format("woff2"), url("/assets/fonts/bold-affa96571d-v2.woff") format("woff");
+  src:
+    url('/assets/fonts/bold-b542beb274-v2.woff2') format('woff2'),
+    url('/assets/fonts/bold-affa96571d-v2.woff') format('woff');
   font-display: fallback;
 }
 @media print {
@@ -423,7 +300,7 @@
   }
 }
 .govuk-service-navigation__link:hover {
-  text-decoration-thickness: max(3px, .1875rem, .12em);
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -433,7 +310,9 @@
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
-  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  box-shadow:
+    0 -2px #ffdd00,
+    0 4px #0b0c0c;
   text-decoration: none;
 }
 @supports not (text-wrap: balance) {
@@ -465,7 +344,7 @@
 }
 
 .govuk-service-navigation__service-name {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
@@ -484,22 +363,30 @@
   }
 }
 
-.govuk-service-navigation__service-name .govuk-service-navigation__link:link, .govuk-service-navigation__service-name .govuk-service-navigation__link:visited {
+.govuk-service-navigation__service-name .govuk-service-navigation__link:link,
+.govuk-service-navigation__service-name
+  .govuk-service-navigation__link:visited {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-service-navigation__service-name .govuk-service-navigation__link:link, .govuk-service-navigation__service-name .govuk-service-navigation__link:visited {
+  .govuk-service-navigation__service-name .govuk-service-navigation__link:link,
+  .govuk-service-navigation__service-name
+    .govuk-service-navigation__link:visited {
     color: #000000;
   }
 }
 .govuk-service-navigation__service-name .govuk-service-navigation__link:hover {
   color: rgba(11, 12, 12, 0.99);
 }
-.govuk-service-navigation__service-name .govuk-service-navigation__link:active, .govuk-service-navigation__service-name .govuk-service-navigation__link:focus {
+.govuk-service-navigation__service-name .govuk-service-navigation__link:active,
+.govuk-service-navigation__service-name .govuk-service-navigation__link:focus {
   color: #0b0c0c;
 }
 @media print {
-  .govuk-service-navigation__service-name .govuk-service-navigation__link:active, .govuk-service-navigation__service-name .govuk-service-navigation__link:focus {
+  .govuk-service-navigation__service-name
+    .govuk-service-navigation__link:active,
+  .govuk-service-navigation__service-name
+    .govuk-service-navigation__link:focus {
     color: #000000;
   }
 }
@@ -509,7 +396,7 @@
 }
 
 .govuk-service-navigation__toggle {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
@@ -540,7 +427,9 @@
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
-  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  box-shadow:
+    0 -2px #ffdd00,
+    0 4px #0b0c0c;
   text-decoration: none;
 }
 @supports not (text-wrap: balance) {
@@ -559,10 +448,10 @@
   clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
   border-width: 8.66px 5px 0 5px;
   border-top-color: inherit;
-  content: "";
+  content: '';
   margin-left: 5px;
 }
-.govuk-service-navigation__toggle[aria-expanded=true]::after {
+.govuk-service-navigation__toggle[aria-expanded='true']::after {
   display: inline-block;
   width: 0;
   height: 0;
@@ -576,12 +465,14 @@
 .govuk-service-navigation__toggle[hidden] {
   display: none;
 }
-.govuk-service-navigation__service-name + .govuk-service-navigation__wrapper .govuk-service-navigation__toggle {
+.govuk-service-navigation__service-name
+  + .govuk-service-navigation__wrapper
+  .govuk-service-navigation__toggle {
   margin-top: 0;
 }
 
 .govuk-service-navigation__list {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -610,7 +501,7 @@
     margin-bottom: 0;
   }
 }
-@media screen and (min-width: 40.0625em) and (min-width: 0\0 ) {
+@media screen and (min-width: 40.0625em) and (min-width: 0\0) {
   .govuk-service-navigation__list {
     display: block;
   }
@@ -625,34 +516,55 @@
   color: #ffffff;
   background-color: #1d70b8;
 }
-.govuk-template--rebranded .govuk-service-navigation--inverse .govuk-width-container {
+.govuk-template--rebranded
+  .govuk-service-navigation--inverse
+  .govuk-width-container {
   border-width: 1px 0;
   border-style: solid;
   border-color: #8eb8dc;
 }
-.govuk-template--rebranded .govuk-service-navigation--inverse .govuk-service-navigation__container {
+.govuk-template--rebranded
+  .govuk-service-navigation--inverse
+  .govuk-service-navigation__container {
   margin-top: -1px;
 }
-.govuk-template--rebranded .govuk-service-navigation--inverse .govuk-service-navigation__item,
-.govuk-template--rebranded .govuk-service-navigation--inverse .govuk-service-navigation__service-name {
+.govuk-template--rebranded
+  .govuk-service-navigation--inverse
+  .govuk-service-navigation__item,
+.govuk-template--rebranded
+  .govuk-service-navigation--inverse
+  .govuk-service-navigation__service-name {
   border-color: #ffffff;
 }
-.govuk-template--rebranded .govuk-service-navigation--inverse .govuk-service-navigation__link:link, .govuk-template--rebranded .govuk-service-navigation--inverse .govuk-service-navigation__link:visited {
+.govuk-template--rebranded
+  .govuk-service-navigation--inverse
+  .govuk-service-navigation__link:link,
+.govuk-template--rebranded
+  .govuk-service-navigation--inverse
+  .govuk-service-navigation__link:visited {
   color: #ffffff;
 }
-.govuk-template--rebranded .govuk-service-navigation--inverse .govuk-service-navigation__link:hover, .govuk-template--rebranded .govuk-service-navigation--inverse .govuk-service-navigation__link:active {
+.govuk-template--rebranded
+  .govuk-service-navigation--inverse
+  .govuk-service-navigation__link:hover,
+.govuk-template--rebranded
+  .govuk-service-navigation--inverse
+  .govuk-service-navigation__link:active {
   color: rgba(255, 255, 255, 0.99);
 }
-.govuk-template--rebranded .govuk-service-navigation--inverse .govuk-service-navigation__link:focus {
+.govuk-template--rebranded
+  .govuk-service-navigation--inverse
+  .govuk-service-navigation__link:focus {
   color: #0b0c0c;
 }
-.govuk-template--rebranded .govuk-service-navigation--inverse .govuk-service-navigation__toggle:not(:focus) {
+.govuk-template--rebranded
+  .govuk-service-navigation--inverse
+  .govuk-service-navigation__toggle:not(:focus) {
   color: currentcolor;
 }
 
-
 :root {
-  --govuk-frontend-version: "5.11.1";
+  --govuk-frontend-version: '5.11.1';
   --govuk-breakpoint-mobile: 20rem;
   --govuk-frontend-breakpoint-mobile: var(--govuk-breakpoint-mobile);
   --govuk-breakpoint-tablet: 40.0625rem;
@@ -661,10 +573,9 @@
   --govuk-frontend-breakpoint-desktop: var(--govuk-breakpoint-desktop);
 }
 
-
 .cross-service-header__button {
   display: none;
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
@@ -702,7 +613,7 @@
   }
 }
 .cross-service-header__button:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0.15rem;
   top: 50%;
@@ -721,7 +632,9 @@
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
-  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  box-shadow:
+    0 -2px #ffdd00,
+    0 4px #0b0c0c;
   text-decoration: none;
 }
 @supports not (text-wrap: balance) {
@@ -740,7 +653,9 @@
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
-  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  box-shadow:
+    0 -2px #ffdd00,
+    0 4px #0b0c0c;
   text-decoration: none;
 }
 @supports not (text-wrap: balance) {
@@ -757,27 +672,33 @@
 .cross-service-header__button-icon.cross-service-header__button-icon--focus {
   display: none;
 }
-.cross-service-header__button:focus .cross-service-header__button-icon.cross-service-header__button-icon--default {
+.cross-service-header__button:focus
+  .cross-service-header__button-icon.cross-service-header__button-icon--default {
   display: none;
 }
-.cross-service-header__button:focus .cross-service-header__button-icon.cross-service-header__button-icon--focus {
+.cross-service-header__button:focus
+  .cross-service-header__button-icon.cross-service-header__button-icon--focus {
   display: inline;
 }
-.cross-service-header__button:focus:not(:focus-visible) .cross-service-header__button-icon.cross-service-header__button-icon--default {
+.cross-service-header__button:focus:not(:focus-visible)
+  .cross-service-header__button-icon.cross-service-header__button-icon--default {
   display: inline;
 }
-.cross-service-header__button:focus:not(:focus-visible) .cross-service-header__button-icon.cross-service-header__button-icon--focus {
+.cross-service-header__button:focus:not(:focus-visible)
+  .cross-service-header__button-icon.cross-service-header__button-icon--focus {
   display: none;
 }
-.cross-service-header__button:focus-visible .cross-service-header__button-icon.cross-service-header__button-icon--default {
+.cross-service-header__button:focus-visible
+  .cross-service-header__button-icon.cross-service-header__button-icon--default {
   display: none;
 }
-.cross-service-header__button:focus-visible .cross-service-header__button-icon.cross-service-header__button-icon--focus {
+.cross-service-header__button:focus-visible
+  .cross-service-header__button-icon.cross-service-header__button-icon--focus {
   display: inline;
 }
 
 .one-login-header {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -821,58 +742,72 @@
   }
 }
 
-.one-login-header__link:link, .one-login-header__link:visited,
+.one-login-header__link:link,
+.one-login-header__link:visited,
 .one-login-header__nav__link:link,
 .one-login-header__nav__link:visited {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: none;
 }
 @media print {
-  .one-login-header__link:link, .one-login-header__link:visited,
+  .one-login-header__link:link,
+  .one-login-header__link:visited,
   .one-login-header__nav__link:link,
   .one-login-header__nav__link:visited {
     font-family: sans-serif;
   }
 }
-.one-login-header__link:link:link, .one-login-header__link:link:visited, .one-login-header__link:visited:link, .one-login-header__link:visited:visited,
+.one-login-header__link:link:link,
+.one-login-header__link:link:visited,
+.one-login-header__link:visited:link,
+.one-login-header__link:visited:visited,
 .one-login-header__nav__link:link:link,
 .one-login-header__nav__link:link:visited,
 .one-login-header__nav__link:visited:link,
 .one-login-header__nav__link:visited:visited {
   color: #ffffff;
 }
-.one-login-header__link:link:hover, .one-login-header__link:link:active, .one-login-header__link:visited:hover, .one-login-header__link:visited:active,
+.one-login-header__link:link:hover,
+.one-login-header__link:link:active,
+.one-login-header__link:visited:hover,
+.one-login-header__link:visited:active,
 .one-login-header__nav__link:link:hover,
 .one-login-header__nav__link:link:active,
 .one-login-header__nav__link:visited:hover,
 .one-login-header__nav__link:visited:active {
   color: rgba(255, 255, 255, 0.99);
 }
-.one-login-header__link:link:focus, .one-login-header__link:visited:focus,
+.one-login-header__link:link:focus,
+.one-login-header__link:visited:focus,
 .one-login-header__nav__link:link:focus,
 .one-login-header__nav__link:visited:focus {
   color: #0b0c0c;
 }
-.one-login-header__link:link:hover, .one-login-header__link:visited:hover,
+.one-login-header__link:link:hover,
+.one-login-header__link:visited:hover,
 .one-login-header__nav__link:link:hover,
 .one-login-header__nav__link:visited:hover {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 0.1578em;
 }
-.one-login-header__link:link:focus, .one-login-header__link:visited:focus,
+.one-login-header__link:link:focus,
+.one-login-header__link:visited:focus,
 .one-login-header__nav__link:link:focus,
 .one-login-header__nav__link:visited:focus {
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
-  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  box-shadow:
+    0 -2px #ffdd00,
+    0 4px #0b0c0c;
   text-decoration: none;
 }
 @supports not (text-wrap: balance) {
-  .one-login-header__link:link:focus, .one-login-header__link:visited:focus,
+  .one-login-header__link:link:focus,
+  .one-login-header__link:visited:focus,
   .one-login-header__nav__link:link:focus,
   .one-login-header__nav__link:visited:focus {
     -webkit-box-decoration-break: clone;
@@ -899,7 +834,7 @@
 }
 
 .one-login-header__link--homepage {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
@@ -921,10 +856,12 @@
     box-shadow: 0 0 #ffdd00;
   }
 }
-.one-login-header__link--homepage:link, .one-login-header__link--homepage:visited {
+.one-login-header__link--homepage:link,
+.one-login-header__link--homepage:visited {
   text-decoration: none;
 }
-.one-login-header__link--homepage:hover, .one-login-header__link--homepage:active {
+.one-login-header__link--homepage:hover,
+.one-login-header__link--homepage:active {
   margin-bottom: -3px;
   border-bottom: 3px solid;
 }
@@ -1004,21 +941,24 @@
     display: flex;
     justify-content: center;
   }
-  .one-login-header__nav__link.one-login-header__nav__link--one-login:focus .cross-service-header__button-icon {
+  .one-login-header__nav__link.one-login-header__nav__link--one-login:focus
+    .cross-service-header__button-icon {
     display: none;
   }
-  .one-login-header__nav__link.one-login-header__nav__link--one-login:focus .cross-service-header__button-icon--focus {
+  .one-login-header__nav__link.one-login-header__nav__link--one-login:focus
+    .cross-service-header__button-icon--focus {
     display: inline;
   }
 }
 @media (max-width: 40.0525em) {
-  .one-login-header__nav__link.one-login-header__nav__link--one-login .cross-service-header__button-icon {
+  .one-login-header__nav__link.one-login-header__nav__link--one-login
+    .cross-service-header__button-icon {
     display: none;
   }
 }
 
 .rebranded-one-login-header {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -1080,7 +1020,7 @@
 }
 
 .rebranded-one-login-header__link--homepage {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
@@ -1099,10 +1039,12 @@
     box-shadow: 0 0 #ffdd00;
   }
 }
-.rebranded-one-login-header__link--homepage:link, .rebranded-one-login-header__link--homepage:visited {
+.rebranded-one-login-header__link--homepage:link,
+.rebranded-one-login-header__link--homepage:visited {
   text-decoration: none;
 }
-.rebranded-one-login-header__link--homepage:hover, .rebranded-one-login-header__link--homepage:active {
+.rebranded-one-login-header__link--homepage:hover,
+.rebranded-one-login-header__link--homepage:active {
   margin-bottom: -3px;
   border-bottom: 3px solid;
 }
@@ -1111,58 +1053,72 @@
   border-bottom: 0;
 }
 
-.rebranded-one-login-header__link:link, .rebranded-one-login-header__link:visited,
+.rebranded-one-login-header__link:link,
+.rebranded-one-login-header__link:visited,
 .rebranded-one-login-header__nav__link:link,
 .rebranded-one-login-header__nav__link:visited {
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-decoration: none;
 }
 @media print {
-  .rebranded-one-login-header__link:link, .rebranded-one-login-header__link:visited,
+  .rebranded-one-login-header__link:link,
+  .rebranded-one-login-header__link:visited,
   .rebranded-one-login-header__nav__link:link,
   .rebranded-one-login-header__nav__link:visited {
     font-family: sans-serif;
   }
 }
-.rebranded-one-login-header__link:link:link, .rebranded-one-login-header__link:link:visited, .rebranded-one-login-header__link:visited:link, .rebranded-one-login-header__link:visited:visited,
+.rebranded-one-login-header__link:link:link,
+.rebranded-one-login-header__link:link:visited,
+.rebranded-one-login-header__link:visited:link,
+.rebranded-one-login-header__link:visited:visited,
 .rebranded-one-login-header__nav__link:link:link,
 .rebranded-one-login-header__nav__link:link:visited,
 .rebranded-one-login-header__nav__link:visited:link,
 .rebranded-one-login-header__nav__link:visited:visited {
   color: #ffffff;
 }
-.rebranded-one-login-header__link:link:hover, .rebranded-one-login-header__link:link:active, .rebranded-one-login-header__link:visited:hover, .rebranded-one-login-header__link:visited:active,
+.rebranded-one-login-header__link:link:hover,
+.rebranded-one-login-header__link:link:active,
+.rebranded-one-login-header__link:visited:hover,
+.rebranded-one-login-header__link:visited:active,
 .rebranded-one-login-header__nav__link:link:hover,
 .rebranded-one-login-header__nav__link:link:active,
 .rebranded-one-login-header__nav__link:visited:hover,
 .rebranded-one-login-header__nav__link:visited:active {
   color: rgba(255, 255, 255, 0.99);
 }
-.rebranded-one-login-header__link:link:focus, .rebranded-one-login-header__link:visited:focus,
+.rebranded-one-login-header__link:link:focus,
+.rebranded-one-login-header__link:visited:focus,
 .rebranded-one-login-header__nav__link:link:focus,
 .rebranded-one-login-header__nav__link:visited:focus {
   color: #0b0c0c;
 }
-.rebranded-one-login-header__link:link:hover, .rebranded-one-login-header__link:visited:hover,
+.rebranded-one-login-header__link:link:hover,
+.rebranded-one-login-header__link:visited:hover,
 .rebranded-one-login-header__nav__link:link:hover,
 .rebranded-one-login-header__nav__link:visited:hover {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 0.1578em;
 }
-.rebranded-one-login-header__link:link:focus, .rebranded-one-login-header__link:visited:focus,
+.rebranded-one-login-header__link:link:focus,
+.rebranded-one-login-header__link:visited:focus,
 .rebranded-one-login-header__nav__link:link:focus,
 .rebranded-one-login-header__nav__link:visited:focus {
   outline: 3px solid transparent;
   color: #0b0c0c;
   background-color: #ffdd00;
-  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  box-shadow:
+    0 -2px #ffdd00,
+    0 4px #0b0c0c;
   text-decoration: none;
 }
 @supports not (text-wrap: balance) {
-  .rebranded-one-login-header__link:link:focus, .rebranded-one-login-header__link:visited:focus,
+  .rebranded-one-login-header__link:link:focus,
+  .rebranded-one-login-header__link:visited:focus,
   .rebranded-one-login-header__nav__link:link:focus,
   .rebranded-one-login-header__nav__link:visited:focus {
     -webkit-box-decoration-break: clone;
@@ -1203,7 +1159,7 @@
     padding: 15px 0;
   }
   .rebranded-one-login-header__nav__link:after {
-    content: "";
+    content: '';
     display: none;
     position: absolute;
     height: 3px;
@@ -1211,26 +1167,52 @@
     bottom: 0;
     left: 15px;
   }
-  .rebranded-one-login-header__nav__link:link:link:hover, .rebranded-one-login-header__nav__link:link:link:active, .rebranded-one-login-header__nav__link:link:visited:hover, .rebranded-one-login-header__nav__link:link:visited:active, .rebranded-one-login-header__nav__link:visited:link:hover, .rebranded-one-login-header__nav__link:visited:link:active, .rebranded-one-login-header__nav__link:visited:visited:hover, .rebranded-one-login-header__nav__link:visited:visited:active {
+  .rebranded-one-login-header__nav__link:link:link:hover,
+  .rebranded-one-login-header__nav__link:link:link:active,
+  .rebranded-one-login-header__nav__link:link:visited:hover,
+  .rebranded-one-login-header__nav__link:link:visited:active,
+  .rebranded-one-login-header__nav__link:visited:link:hover,
+  .rebranded-one-login-header__nav__link:visited:link:active,
+  .rebranded-one-login-header__nav__link:visited:visited:hover,
+  .rebranded-one-login-header__nav__link:visited:visited:active {
     text-decoration: none;
   }
-  .rebranded-one-login-header__nav__link:link:link:hover:after, .rebranded-one-login-header__nav__link:link:link:active:after, .rebranded-one-login-header__nav__link:link:visited:hover:after, .rebranded-one-login-header__nav__link:link:visited:active:after, .rebranded-one-login-header__nav__link:visited:link:hover:after, .rebranded-one-login-header__nav__link:visited:link:active:after, .rebranded-one-login-header__nav__link:visited:visited:hover:after, .rebranded-one-login-header__nav__link:visited:visited:active:after {
+  .rebranded-one-login-header__nav__link:link:link:hover:after,
+  .rebranded-one-login-header__nav__link:link:link:active:after,
+  .rebranded-one-login-header__nav__link:link:visited:hover:after,
+  .rebranded-one-login-header__nav__link:link:visited:active:after,
+  .rebranded-one-login-header__nav__link:visited:link:hover:after,
+  .rebranded-one-login-header__nav__link:visited:link:active:after,
+  .rebranded-one-login-header__nav__link:visited:visited:hover:after,
+  .rebranded-one-login-header__nav__link:visited:visited:active:after {
     display: block;
     background-color: #ffffff;
   }
-  .rebranded-one-login-header__nav__link:link:link:focus, .rebranded-one-login-header__nav__link:link:visited:focus, .rebranded-one-login-header__nav__link:visited:link:focus, .rebranded-one-login-header__nav__link:visited:visited:focus {
+  .rebranded-one-login-header__nav__link:link:link:focus,
+  .rebranded-one-login-header__nav__link:link:visited:focus,
+  .rebranded-one-login-header__nav__link:visited:link:focus,
+  .rebranded-one-login-header__nav__link:visited:visited:focus {
     box-shadow: none;
   }
-  .rebranded-one-login-header__nav__link:link:link:focus:after, .rebranded-one-login-header__nav__link:link:visited:focus:after, .rebranded-one-login-header__nav__link:visited:link:focus:after, .rebranded-one-login-header__nav__link:visited:visited:focus:after {
+  .rebranded-one-login-header__nav__link:link:link:focus:after,
+  .rebranded-one-login-header__nav__link:link:visited:focus:after,
+  .rebranded-one-login-header__nav__link:visited:link:focus:after,
+  .rebranded-one-login-header__nav__link:visited:visited:focus:after {
     display: block;
     background-color: #0b0c0c;
   }
 }
 @media (max-width: 40.0525em) {
-  .rebranded-one-login-header__nav__link:link:link, .rebranded-one-login-header__nav__link:link:visited, .rebranded-one-login-header__nav__link:visited:link, .rebranded-one-login-header__nav__link:visited:visited {
+  .rebranded-one-login-header__nav__link:link:link,
+  .rebranded-one-login-header__nav__link:link:visited,
+  .rebranded-one-login-header__nav__link:visited:link,
+  .rebranded-one-login-header__nav__link:visited:visited {
     color: #1d70b8;
   }
-  .rebranded-one-login-header__nav__link:link:link:focus, .rebranded-one-login-header__nav__link:link:visited:focus, .rebranded-one-login-header__nav__link:visited:link:focus, .rebranded-one-login-header__nav__link:visited:visited:focus {
+  .rebranded-one-login-header__nav__link:link:link:focus,
+  .rebranded-one-login-header__nav__link:link:visited:focus,
+  .rebranded-one-login-header__nav__link:visited:link:focus,
+  .rebranded-one-login-header__nav__link:visited:visited:focus {
     color: #0b0c0c;
   }
 }
@@ -1280,7 +1262,8 @@
 }
 
 @media (max-width: 40.0525em) {
-  .rebranded-one-login-header__nav--open .rebranded-one-login-header__nav__list {
+  .rebranded-one-login-header__nav--open
+    .rebranded-one-login-header__nav__list {
     display: block;
   }
 }
@@ -1315,7 +1298,7 @@
 
 .rebranded-cross-service-header__toggle {
   display: none;
-  font-family: "GDS Transport", arial, sans-serif;
+  font-family: 'GDS Transport', arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
@@ -1383,7 +1366,7 @@
   align-items: center;
 }
 .rebranded-cross-service-header__toggle-content-wrapper:after {
-  content: "";
+  content: '';
   display: inline-block;
   margin-left: 8px;
   top: 50%;
@@ -1394,11 +1377,12 @@
   border-top: 0.15rem solid;
   border-right: 0.15rem solid;
 }
-.rebranded-cross-service-header__toggle--open .rebranded-cross-service-header__toggle-content-wrapper:after {
+.rebranded-cross-service-header__toggle--open
+  .rebranded-cross-service-header__toggle-content-wrapper:after {
   transform: translateY(30%) rotate(-45deg);
 }
 .rebranded-cross-service-header__toggle-content-wrapper:before {
-  content: "";
+  content: '';
   display: inline-block;
   position: absolute;
   width: 100%;
@@ -1406,16 +1390,26 @@
   background-color: transparent;
   bottom: -14px;
 }
-.rebranded-cross-service-header__toggle:hover .rebranded-cross-service-header__toggle-content-wrapper:before {
+.rebranded-cross-service-header__toggle:hover
+  .rebranded-cross-service-header__toggle-content-wrapper:before {
   background-color: #ffffff;
 }
-.rebranded-cross-service-header__toggle--open .rebranded-cross-service-header__toggle-content-wrapper:before, .rebranded-cross-service-header__toggle--open:hover .rebranded-cross-service-header__toggle-content-wrapper:before {
+.rebranded-cross-service-header__toggle--open
+  .rebranded-cross-service-header__toggle-content-wrapper:before,
+.rebranded-cross-service-header__toggle--open:hover
+  .rebranded-cross-service-header__toggle-content-wrapper:before {
   background-color: #1d70b8;
 }
-.rebranded-cross-service-header__toggle:focus .rebranded-cross-service-header__toggle-content-wrapper:before, .rebranded-cross-service-header__toggle:focus-visible .rebranded-cross-service-header__toggle-content-wrapper:before {
+.rebranded-cross-service-header__toggle:focus
+  .rebranded-cross-service-header__toggle-content-wrapper:before,
+.rebranded-cross-service-header__toggle:focus-visible
+  .rebranded-cross-service-header__toggle-content-wrapper:before {
   background-color: #0b0c0c;
 }
-.rebranded-cross-service-header__toggle:focus .rebranded-cross-service-header__toggle-content-wrapper:before:hover, .rebranded-cross-service-header__toggle:focus-visible .rebranded-cross-service-header__toggle-content-wrapper:before:hover {
+.rebranded-cross-service-header__toggle:focus
+  .rebranded-cross-service-header__toggle-content-wrapper:before:hover,
+.rebranded-cross-service-header__toggle:focus-visible
+  .rebranded-cross-service-header__toggle-content-wrapper:before:hover {
   background-color: #0b0c0c;
 }
 
