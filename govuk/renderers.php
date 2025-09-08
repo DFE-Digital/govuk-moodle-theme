@@ -2,7 +2,7 @@
 
 class theme_govuk_core_renderer extends core_renderer
 {
-    public function logout_endpoint($withlinks = true)
+    public function logout_endpoint()
     {
         global $USER;
 
