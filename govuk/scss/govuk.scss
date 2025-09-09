@@ -6,7 +6,7 @@ html body {
   height: auto;
 }
 
-.btn-primary {
+.btn.btn-primary {
   // This is the Moodle class
   @extend .govuk-button; // extends this class with the styles from govuk-button
 }
