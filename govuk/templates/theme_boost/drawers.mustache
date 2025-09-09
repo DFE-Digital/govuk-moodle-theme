@@ -69,24 +69,6 @@
     <main class="govuk-main-wrapper" id="main-content">
         <div id="page" data-region="mainpage" data-usertour="scroller">
             <div id="topofscroll" class="main-inner">
-                <div class="drawer-toggles d-flex">
-                    {{#courseindex}}
-                        <div class="drawer-toggler drawer-left-toggle open-nav d-print-none">
-                            <button
-                                class="btn icon-no-margin"
-                                data-toggler="drawers"
-                                data-action="toggle"
-                                data-target="theme_boost-drawers-courseindex"
-                                data-toggle="tooltip"
-                                data-placement="right"
-                                title="{{#str}}opendrawerindex, core{{/str}}"
-                            >
-                                <span class="sr-only">{{#str}}opendrawerindex, core{{/str}}</span>
-                                {{#pix}} t/index_drawer, moodle {{/pix}}
-                            </button>
-                        </div>
-                    {{/courseindex}}
-                </div>
                 {{{ output.full_header }}}
                 {{#secondarymoremenu}}
                     <div class="secondary-navigation d-print-none">
