@@ -138,6 +138,12 @@
     initAll()
 </script>
 
+<script type="module" src="/theme/govuk/javascript/service-header.js"></script>
+<script type="module">
+    import { initCrossServiceHeader } from '/theme/govuk/javascript/service-header.js';
+    initCrossServiceHeader();
+</script>
+
 </body>
 </html>
 {{#js}}

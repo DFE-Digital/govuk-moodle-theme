@@ -36,7 +36,7 @@
             {{#is_action_link}}
                 <a role="menuitem" class="govuk-service-navigation__link {{#classes}}{{.}} {{/classes}}" {{#actionattributes}}{{name}}="{{value}}" {{/actionattributes}} href="{{{url}}}{{{action}}}"
                     {{#title}}title="{{.}}"{{/title}}
-                    data-disableactive="true" tabindex="-1"
+                    data-disableactive="true"
                 >
                     {{{text}}}
                 </a>
@@ -50,7 +50,6 @@
                     {{#title}}title="{{.}}"{{/title}}
                     {{#isactive}}aria-current="true"{{/isactive}}
                     data-disableactive="true"
-                    {{^isactive}}tabindex="-1"{{/isactive}}
                 >
                     {{{text}}}
                 </a>

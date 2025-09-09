@@ -2,6 +2,20 @@
 
 class theme_govuk_core_renderer extends core_renderer
 {
+    public function logout_endpoint()
+    {
+        global $USER;
+
+        if (!isloggedin() || isguestuser()) {
+            return '';
+        }
+
+        $logouturl = new \moodle_url('/login/logout.php', [
+            'sesskey' => sesskey(),
+        ]);
+        return $logouturl->out(false);
+    }
+
     public function body_attributes($additionalclasses = [])
     {
         $attributes = parent::body_attributes($additionalclasses);
