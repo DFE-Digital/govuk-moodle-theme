@@ -69,8 +69,12 @@ class theme_govuk_core_renderer extends core_renderer
     }
 
     /** Hide breadcrumbs on pages within a course */
-    public function navbar(): string {
-        if ($this->page->context && $this->page->context->get_course_context(false)) {
+    public function navbar(): string
+    {
+        if (
+            $this->page->context &&
+            $this->page->context->get_course_context(false)
+        ) {
             return '';
         }
         return parent::navbar();
