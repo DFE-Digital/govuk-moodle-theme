@@ -99,6 +99,8 @@ class theme_govuk_core_renderer extends core_renderer
             // include cancel and save buttons
             $backto = optional_param('backto', '', PARAM_LOCALURL);
             if (!empty($backto)) {
+                $cancelurl = new \moodle_url($backto);
+            } else {
                 $cmid = $this->page->cm ? $this->page->cm->id : optional_param('id', 0, PARAM_INT);
                 $cancelurl = new \moodle_url('/mod/data/view.php', ['id' => $cmid]);
             }
