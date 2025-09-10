@@ -79,4 +79,37 @@ class theme_govuk_core_renderer extends core_renderer
         }
         return parent::navbar();
     }
+
+    /**
+     * Override to change content used to render the sticky footer template
+     * on the add entry page for database activities (mod/data/edit.php)
+     *
+     * @param \core\output\sticky_footer $footer
+     * @return string
+     */
+    protected function render_sticky_footer(\core\output\sticky_footer $footer): string
+    {
+        $data = $footer->export_for_template($this);
+
+        $isdataedit = ($this->page->pagetype === 'mod-data-edit');
+        $rid = optional_param('rid', 0, PARAM_INT);
+        $isadd = ($rid == 0);
+
+        if ($isdataedit && $isadd) {
+            // include cancel and save buttons
+            $data['stickycontent'] = html_writer::link(
+                $redirectbackto,
+                get_string('cancel'),
+                ['class' => 'btn btn-secondary mx-1', 'role' => 'button']
+            );
+            $data['stickycontent'] .= html_writer::empty_tag('input', [
+                'type' => 'submit',
+                'name' => 'saveandview',
+                'value' => get_string('save'),
+                'class' => 'btn btn-primary mx-1'
+            ]);
+        }
+
+        return $this->render_from_template('core/sticky_footer', $data);
+    }
 }
