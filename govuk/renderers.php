@@ -97,8 +97,13 @@ class theme_govuk_core_renderer extends core_renderer
 
         if ($isdataedit && $isadd) {
             // include cancel and save buttons
+            $backto = optional_param('backto', '', PARAM_LOCALURL);
+            if (!empty($backto)) {
+                $cmid = $this->page->cm ? $this->page->cm->id : optional_param('id', 0, PARAM_INT);
+                $cancelurl = new \moodle_url('/mod/data/view.php', ['id' => $cmid]);
+            }
             $data['stickycontent'] = html_writer::link(
-                $redirectbackto,
+                $cancelurl,
                 get_string('cancel'),
                 ['class' => 'btn btn-secondary mx-1', 'role' => 'button']
             );
