@@ -87,13 +87,14 @@ class theme_govuk_core_renderer extends core_renderer
      * @param \core\output\sticky_footer $footer
      * @return string
      */
-    protected function render_sticky_footer(\core\output\sticky_footer $footer): string
-    {
+    protected function render_sticky_footer(
+        \core\output\sticky_footer $footer,
+    ): string {
         $data = $footer->export_for_template($this);
 
-        $isdataedit = ($this->page->pagetype === 'mod-data-edit');
+        $isdataedit = $this->page->pagetype === 'mod-data-edit';
         $rid = optional_param('rid', 0, PARAM_INT);
-        $isadd = ($rid == 0);
+        $isadd = $rid == 0;
 
         if ($isdataedit && $isadd) {
             // include cancel and save buttons
@@ -101,19 +102,23 @@ class theme_govuk_core_renderer extends core_renderer
             if (!empty($backto)) {
                 $cancelurl = new \moodle_url($backto);
             } else {
-                $cmid = $this->page->cm ? $this->page->cm->id : optional_param('id', 0, PARAM_INT);
-                $cancelurl = new \moodle_url('/mod/data/view.php', ['id' => $cmid]);
+                $cmid = $this->page->cm
+                    ? $this->page->cm->id
+                    : optional_param('id', 0, PARAM_INT);
+                $cancelurl = new \moodle_url('/mod/data/view.php', [
+                    'id' => $cmid,
+                ]);
             }
             $data['stickycontent'] = html_writer::link(
                 $cancelurl,
                 get_string('cancel'),
-                ['class' => 'btn btn-secondary mx-1', 'role' => 'button']
+                ['class' => 'btn btn-secondary mx-1', 'role' => 'button'],
             );
             $data['stickycontent'] .= html_writer::empty_tag('input', [
                 'type' => 'submit',
                 'name' => 'saveandview',
                 'value' => get_string('save'),
-                'class' => 'btn btn-primary mx-1'
+                'class' => 'btn btn-primary mx-1',
             ]);
         }
 
