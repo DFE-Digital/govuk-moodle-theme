@@ -131,3 +131,10 @@ $templatecontext = [
 ];
 
 echo $OUTPUT->render_from_template('theme_boost/drawers', $templatecontext);
+
+// override recently accessed items js module to prevent undefined error on the dashboard page
+if ($PAGE->pagetype === 'my-index') {
+    $PAGE->requires->js_amd_inline(
+        "require.config({map:{'*':{'block_recentlyaccesseditems/main':'theme_govuk/recentlyaccesseditems_main'}}});",
+    );
+}
