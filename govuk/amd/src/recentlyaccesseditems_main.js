@@ -1,12 +1,12 @@
-  /**
-   * Recently accessed items block override to gracefully handle
-   * the block not being on the page.
-   * Run grunt amd after any changes to generate the build files, unless automated.
-   */
-define([], function() {
-
+/**
+ * Recently accessed items block override to gracefully handle
+ * the block not being on the page.
+ * Run grunt amd after any changes to generate the build files, unless automated.
+ */
+define([], function () {
   const SELECTORS = {
-    SHOWMORE_LINK: '[data-region="recentlyaccesseditems-view"] [data-action="more-items"]',
+    SHOWMORE_LINK:
+      '[data-region="recentlyaccesseditems-view"] [data-action="more-items"]',
     ITEMS_LIST: '[data-region="items-list"]',
   };
 
@@ -34,7 +34,9 @@ define([], function() {
 
   const init = () => {
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', registerEventListeners, { once: true });
+      document.addEventListener('DOMContentLoaded', registerEventListeners, {
+        once: true,
+      });
     } else {
       registerEventListeners();
     }
