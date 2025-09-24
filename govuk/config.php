@@ -27,8 +27,15 @@ defined('MOODLE_INTERNAL') || die();
 
 $THEME->name = 'govuk';
 $THEME->parents = ['boost'];
-$THEME->sheets = ['govuk', 'service-header'];
+$THEME->sheets = ['service-header'];
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
+
+// Use Moodle’s SCSS pipeline
+$THEME->scss = function($theme) {
+    return theme_govuk_get_main_scss_content($theme);
+};
+$THEME->prescsscallback   = 'theme_govuk_get_pre_scss';
+$THEME->extrascsscallback = 'theme_govuk_get_extra_scss';
 
 $THEME->layouts = [
     'standard' => [
