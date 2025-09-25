@@ -31,10 +31,10 @@ $THEME->sheets = ['service-header'];
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 // Use Moodle’s SCSS pipeline
-$THEME->scss = function($theme) {
+$THEME->scss = function ($theme) {
     return theme_govuk_get_main_scss_content($theme);
 };
-$THEME->prescsscallback   = 'theme_govuk_get_pre_scss';
+$THEME->prescsscallback = 'theme_govuk_get_pre_scss';
 $THEME->extrascsscallback = 'theme_govuk_get_extra_scss';
 
 $THEME->layouts = [
