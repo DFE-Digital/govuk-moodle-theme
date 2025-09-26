@@ -91,6 +91,11 @@ $regionmainsettingsmenu = $buildregionmainsettings
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
+// Back link show/hide logic
+$rootpagetypes = ['site-index', 'my-index', 'admin-search'];
+$showbacklink = !in_array($PAGE->pagetype, $rootpagetypes, true) 
+                && !($PAGE->context->contextlevel === CONTEXT_COURSE || $PAGE->context->contextlevel === CONTEXT_MODULE);
+
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, [
         'context' => context_course::instance(SITEID),
@@ -114,6 +119,7 @@ $templatecontext = [
     'overflow' => $overflow,
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton,
+    'showbacklink' => $showbacklink,
 
     'faviconsvg' => $OUTPUT
         ->image_url('rebrand/images/favicon', 'theme_govuk')
