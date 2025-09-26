@@ -91,10 +91,8 @@ $regionmainsettingsmenu = $buildregionmainsettings
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
-// Back link show/hide logic
-$rootpagetypes = ['site-index', 'my-index', 'admin-search'];
-$showbacklink = !in_array($PAGE->pagetype, $rootpagetypes, true) 
-                && !($PAGE->context->contextlevel === CONTEXT_COURSE || $PAGE->context->contextlevel === CONTEXT_MODULE);
+$rootpagetypes = ['site-index', 'my-index', 'course-index', 'admin-search'];
+$showbacklink = !in_array($PAGE->pagetype, $rootpagetypes, true);
 
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, [
@@ -119,7 +117,6 @@ $templatecontext = [
     'overflow' => $overflow,
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton,
-    'showbacklink' => $showbacklink,
 
     'faviconsvg' => $OUTPUT
         ->image_url('rebrand/images/favicon', 'theme_govuk')
@@ -134,6 +131,7 @@ $templatecontext = [
     'ogimage' => $OUTPUT
         ->image_url('rebrand/images/govuk-opengraph-image', 'theme_govuk')
         ->out(false),
+    'showbacklink' => $showbacklink,
 ];
 
 echo $OUTPUT->render_from_template('theme_boost/drawers', $templatecontext);
