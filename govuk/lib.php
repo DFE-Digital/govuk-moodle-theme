@@ -24,3 +24,37 @@
 
 // This line protects the file from being accessed by a URL directly.
 defined('MOODLE_INTERNAL') || die();
+
+/**
+ * Main SCSS - add GOV.UK to boost
+ */
+function theme_govuk_get_main_scss_content($theme): string
+{
+    $scss = theme_boost_get_main_scss_content($theme);
+
+    $govuk = @file_get_contents(__DIR__ . '/scss/govuk.scss') ?: '';
+    return $scss . "\n" . $govuk;
+}
+
+/**
+ * SCSS to prepend (variables before Bootstrap/GOV.UK compile)
+ */
+function theme_govuk_get_pre_scss($theme): string
+{
+    $scss = theme_boost_get_pre_scss($theme);
+    // E.g.
+    // $scss .= "\n" . '$govuk-assets-path: "/theme/image.php/govuk/theme/1/";';
+    return $scss;
+}
+
+/**
+ * SCSS to append (after main bundle)
+ */
+function theme_govuk_get_extra_scss($theme): string
+{
+    $scss = theme_boost_get_extra_scss($theme);
+    // E.g.
+    // $extra = @file_get_contents(__DIR__ . '/scss/extra.scss') ?: '';
+    // return $scss . "\n" . $extra;
+    return $scss;
+}
