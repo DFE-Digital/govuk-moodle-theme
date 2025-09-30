@@ -91,7 +91,7 @@ $regionmainsettingsmenu = $buildregionmainsettings
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
-$rootpagetypes = ['site-index', 'my-index', 'course-index', 'admin-search'];
+$rootpagetypes = ['site-index', 'my-index', 'course-index', 'admin-search', 'course-view-section-topics'];
 $showbacklink = !in_array($PAGE->pagetype, $rootpagetypes, true);
 
 $templatecontext = [
