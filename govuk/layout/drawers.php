@@ -91,6 +91,9 @@ $regionmainsettingsmenu = $buildregionmainsettings
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
+$rootpagetypes = ['site-index', 'my-index', 'course-index', 'admin-search', 'course-view-section-topics'];
+$showbacklink = !in_array($PAGE->pagetype, $rootpagetypes, true);
+
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, [
         'context' => context_course::instance(SITEID),
@@ -128,6 +131,7 @@ $templatecontext = [
     'ogimage' => $OUTPUT
         ->image_url('rebrand/images/govuk-opengraph-image', 'theme_govuk')
         ->out(false),
+    'showbacklink' => $showbacklink,
 ];
 
 echo $OUTPUT->render_from_template('theme_boost/drawers', $templatecontext);

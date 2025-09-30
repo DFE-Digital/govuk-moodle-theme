@@ -46,7 +46,8 @@
         "blockdraweropen": true,
         "regionmainsettingsmenu": "",
         "hasregionmainsettingsmenu": false,
-        "addblockbutton": ""
+        "addblockbutton": "",
+        "showbacklink": false
     }
 }}
 {{> theme_govuk/head }}
@@ -66,14 +67,11 @@
     
     {{{ output.standard_top_of_body_html }}}
 
-    <div class="govuk-phase-banner">
-        <p class="govuk-phase-banner__content">
-            <strong class="govuk-phase-banner__content__tag govuk-tag">Beta</strong>
-            <span class="govuk-phase-banner__text">    
-                This is a new service. Help us improve it and <a href="#" class="govuk-link">give your feedback by email</a>.
-            </span>
-        </p>
-    </div>
+    {{> theme_govuk/phase_banner }}
+
+    {{#showbacklink}}
+        {{> theme_govuk/backlink }}
+    {{/showbacklink}}
 
     <main class="govuk-main-wrapper" id="main-content">
         <div id="page" data-region="mainpage" data-usertour="scroller">
