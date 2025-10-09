@@ -33,11 +33,15 @@ jobs:
         run: npm run build:prod
         working-directory: govuk
 
-      - name: Upload compiled govuk/style folder
+      - name: Upload compiled govuk folders
         uses: actions/upload-artifact@v4
         with:
-          name: compiled-govuk-style
-          path: govuk/style
+          name: compiled-govuk
+          path: |
+            govuk/style
+            govuk/assets
+            govuk/javascript
+            govuk/pix
 
   release:
     name: Tag and release
@@ -50,11 +54,11 @@ jobs:
           with: 
             ref: 'main'
 
-        - name: Download compiled govuk folder
+        - name: Download compiled govuk folders
           uses: actions/download-artifact@v4
           with:
-            name: compiled-govuk-style
-            path: govuk/style
+            name: compiled-govuk
+            path: govuk
 
         - name: Create archive    
           run: zip -r 'govuk-moodle-theme.zip' ./govuk
