@@ -1,4 +1,5 @@
-$govuk-images-path: '[[pix:theme_govuk|rebrand/images/]]/';
+$govuk-images-path: '/theme/govuk/assets/rebrand/images/';
+$govuk-assets-path: '/theme/govuk/assets/';
 
 @import '../node_modules/govuk-frontend/dist/govuk/index';
 
@@ -37,10 +38,10 @@ h3 {
 
 // We need to overwrite these image paths as Moodle doesn't support file extensions when using `[[pix]]` to generate image paths
 .govuk-footer__copyright-logo::before {
-  background-image: govuk-image-url('govuk-crest');
+  background-image: govuk-image-url('govuk-crest.svg');
 
   @supports (mask-position: initial) {
-    mask-image: govuk-image-url('govuk-crest');
+    mask-image: govuk-image-url('govuk-crest.svg');
   }
 }
 
