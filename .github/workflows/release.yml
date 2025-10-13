@@ -29,6 +29,13 @@ jobs:
         run: npm install
         working-directory: govuk
 
+      - name: Verify govuk-frontend assets exist
+        run: |
+          [ -d govuk/node_modules/govuk-frontend/dist/govuk/assets ] || {
+            echo "GOV.UK Frontend assets missing. Check npm install completed successfully.";
+            exit 1;
+          }  
+
       - name: Compile SCSS to CSS
         run: npm run build:prod
         working-directory: govuk
