@@ -11,7 +11,6 @@ $govuk-skip-base-styles: true; // no reimport of base styles
 // Import service header styles
 @import '../node_modules/govuk-one-login-service-header/dist/styles/service-header-no-imports';
 
-
 html body {
   height: auto;
 }
