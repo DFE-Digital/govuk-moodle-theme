@@ -1,7 +1,15 @@
-$govuk-images-path: '/theme/govuk/assets/rebrand/images/';
 $govuk-assets-path: '/theme/govuk/assets/';
+$govuk-images-path: '/theme/govuk/assets/rebrand/images/';
 
-@import '../node_modules/govuk-frontend/dist/govuk/index';
+$govuk-new-link-styles: true;
+$govuk-rebrand: true;
+$govuk-new-typography-scale: true;
+
+@import '../node_modules/govuk-frontend/dist/govuk/all';
+
+$govuk-skip-base-styles: true; // no reimport of base styles
+// Import service header styles
+@import '../node_modules/govuk-one-login-service-header/dist/styles/service-header-no-imports';
 
 html body {
   height: auto;
