@@ -1,6 +1,28 @@
 # GOV.UK Moodle Theme
 
-A GOV.UK Moodle theme implementing [GOV GDS](https://design-system.service.gov.uk/).
+This is a GOV.UK Moodle theme implementing [GOV.UK GDS](https://design-system.service.gov.uk/) which has been developed for the [Social Work Practice Development Programme (SWPDP)](https://github.com/DFE-Digital/social-work-induction-programme-digital-service).
+
+The theme is work in progress with a number of components restyled, including:
+- header, which implements the [GOV.UK One Login service header](https://github.com/govuk-one-login/service-header)
+- footer
+- main site navigation
+- headings
+- generic primary and secondary buttons
+- generic form inputs and labels
+- fonts
+- breadcrumbs, although now excluded on pages within a course
+- removal of left hand and right hand drawers for course navigation and for dashboard blocks configuration
+- removal of the footer container popover
+- disabling of sticky footers for activities
+- database activity UI tweaks based on SWPDP requirements
+- addition of a back link
+
+# Overriding components and styles
+The GOV.UK theme inherits from the Moodle boost theme. Moodle components are being overriden primarily through Mustache template overrides and PHP renderer overrides, although there are some instances where CSS overrides are used (see [govuk.css](https://github.com/DFE-Digital/govuk-moodle-theme/blob/main/govuk/scss/govuk.scss)).
+
+The Moodle [theme development guide](https://moodledev.io/docs/5.0/apis/plugintypes/theme) has been used for reference.
+
+GOV.UK DGS assets such as images, styles and JavaScript files are being copied into the release via Github actions from the [govuk frontend](https://www.npmjs.com/package/govuk-frontend) npm package. The version used is 5.11.1, but this can be changed in the `package.json` file.
 
 # Theme distribution
 
